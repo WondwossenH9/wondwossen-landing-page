@@ -1,0 +1,20 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "your-ecr-repository-url:latest",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": 3000,
+      "HostPort": 80
+    }
+  ],
+  "Volumes": [
+    {
+      "HostDirectory": "/var/app/current/logs",
+      "ContainerDirectory": "/app/logs"
+    }
+  ],
+  "Logging": "/var/app/current/logs"
+} 
