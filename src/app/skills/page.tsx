@@ -14,15 +14,7 @@ import {
   GitBranch,
   Lock,
   BarChart3,
-  Smartphone,
-  React,
-  Node,
-  Aws,
-  Docker,
-  Kubernetes,
-  Typescript,
-  Python,
-  Java
+  Smartphone
 } from 'lucide-react';
 
 const skillCategories = [
@@ -31,8 +23,8 @@ const skillCategories = [
     icon: Code,
     color: 'from-blue-500 to-cyan-500',
     skills: [
-      { name: 'React', level: 95, icon: React },
-      { name: 'TypeScript', level: 90, icon: Typescript },
+      { name: 'React', level: 95, icon: Code },
+      { name: 'TypeScript', level: 90, icon: Code },
       { name: 'Next.js', level: 88, icon: Code },
       { name: 'HTML/CSS', level: 92, icon: Code },
       { name: 'Tailwind CSS', level: 85, icon: Code },
@@ -44,9 +36,9 @@ const skillCategories = [
     icon: Server,
     color: 'from-green-500 to-emerald-500',
     skills: [
-      { name: 'Node.js', level: 90, icon: Node },
-      { name: 'Python', level: 85, icon: Python },
-      { name: 'Java', level: 80, icon: Java },
+      { name: 'Node.js', level: 90, icon: Server },
+      { name: 'Python', level: 85, icon: Server },
+      { name: 'Java', level: 80, icon: Server },
       { name: 'Express.js', level: 88, icon: Server },
       { name: 'REST APIs', level: 92, icon: Server },
       { name: 'GraphQL', level: 75, icon: Server },
@@ -57,12 +49,12 @@ const skillCategories = [
     icon: Cloud,
     color: 'from-orange-500 to-red-500',
     skills: [
-      { name: 'AWS EC2', level: 90, icon: Aws },
-      { name: 'AWS Lambda', level: 88, icon: Aws },
-      { name: 'AWS S3', level: 92, icon: Aws },
-      { name: 'AWS RDS', level: 85, icon: Aws },
-      { name: 'AWS ECS', level: 87, icon: Aws },
-      { name: 'CloudFormation', level: 82, icon: Aws },
+      { name: 'AWS EC2', level: 90, icon: Cloud },
+      { name: 'AWS Lambda', level: 88, icon: Cloud },
+      { name: 'AWS S3', level: 92, icon: Cloud },
+      { name: 'AWS RDS', level: 85, icon: Cloud },
+      { name: 'AWS ECS', level: 87, icon: Cloud },
+      { name: 'CloudFormation', level: 82, icon: Cloud },
     ]
   },
   {
@@ -83,8 +75,8 @@ const skillCategories = [
     icon: Shield,
     color: 'from-indigo-500 to-purple-500',
     skills: [
-      { name: 'Docker', level: 88, icon: Docker },
-      { name: 'Kubernetes', level: 75, icon: Kubernetes },
+      { name: 'Docker', level: 88, icon: Shield },
+      { name: 'Kubernetes', level: 75, icon: Shield },
       { name: 'Git', level: 92, icon: GitBranch },
       { name: 'CI/CD', level: 85, icon: Shield },
       { name: 'Terraform', level: 80, icon: Shield },

@@ -30,10 +30,12 @@ const handler = NextAuth({
       return token;
     },
     async session({ session, token }) {
-      session.accessToken = token.accessToken;
+      // Add accessToken to session if needed
       return session;
     },
   },
 });
 
 export { handler as GET, handler as POST };
+
+
