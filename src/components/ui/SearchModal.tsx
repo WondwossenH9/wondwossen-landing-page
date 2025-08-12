@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, X, Command, ArrowUp, ArrowDown, Enter } from 'lucide-react';
+import { Search, X, Command, ArrowUp, ArrowDown, ArrowRight } from 'lucide-react';
 
 interface SearchResult {
   id: string;
@@ -276,7 +276,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         <span>Navigate</span>
                       </div>
                       <div className="flex items-center space-x-1">
-                        <Enter className="w-3 h-3" />
+                        <ArrowRight className="w-3 h-3" />
                         <span>Select</span>
                       </div>
                       <div className="flex items-center space-x-1">
