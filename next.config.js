@@ -23,18 +23,12 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
+  output: 'standalone',
   images: {
     domains: ['cdn.sanity.io', 'images.unsplash.com'],
     formats: ['image/webp', 'image/avif'],
-    unoptimized: true,
   },
-  i18n: {
-    locales: ['en', 'es', 'fr', 'de', 'zh', 'ja'],
-    defaultLocale: 'en',
-    localeDetection: false,
-  },
+  // i18n configuration removed for Amplify compatibility
   async headers() {
     return [
       {
