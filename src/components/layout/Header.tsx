@@ -97,12 +97,42 @@ export function Header() {
 
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center space-x-4">
-
-
-
-
               {/* Theme Toggle */}
               <ThemeToggle />
+
+              {/* Authentication */}
+              {session ? (
+                <div className="relative">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                    className="flex items-center space-x-2"
+                  >
+                    <User className="w-4 h-4" />
+                    <span>{session.user?.name || 'User'}</span>
+                    <ChevronDown className="w-4 h-4" />
+                  </Button>
+                  
+                  {isUserMenuOpen && (
+                    <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-secondary-900 rounded-md shadow-lg border border-secondary-200 dark:border-secondary-700 py-1">
+                      <button
+                        onClick={handleSignOut}
+                        className="flex items-center w-full px-4 py-2 text-sm text-left text-foreground hover:bg-secondary-100 dark:hover:bg-secondary-800"
+                      >
+                        <LogOut className="w-4 h-4 mr-2" />
+                        Sign Out
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link href="/auth/signin">
+                  <Button variant="outline" size="sm">
+                    Sign In
+                  </Button>
+                </Link>
+              )}
 
               {/* CTA Button */}
               <Link href="/contact">
@@ -154,7 +184,26 @@ export function Header() {
                     </Link>
                   ))}
 
-                  <div className="pt-4 border-t border-secondary-200 dark:border-secondary-700">
+                  <div className="pt-4 border-t border-secondary-200 dark:border-secondary-700 space-y-2">
+                    {session ? (
+                      <button
+                        onClick={() => {
+                          handleSignOut();
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="btn btn-outline w-full text-center"
+                      >
+                        Sign Out
+                      </button>
+                    ) : (
+                      <Link
+                        href="/auth/signin"
+                        className="btn btn-outline w-full text-center"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Sign In
+                      </Link>
+                    )}
                     <Link
                       href="/contact"
                       className="btn btn-primary w-full text-center"

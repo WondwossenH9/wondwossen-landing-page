@@ -22,6 +22,7 @@ const handler = NextAuth({
     signOut: '/auth/signout',
     error: '/auth/error',
   },
+  debug: process.env.NODE_ENV === 'development',
   callbacks: {
     async jwt({ token, user, account }) {
       if (account && user) {
