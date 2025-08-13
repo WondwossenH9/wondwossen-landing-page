@@ -5,12 +5,12 @@ import GitHubProvider from 'next-auth/providers/github';
 const handler = NextAuth({
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      clientId: process.env.GOOGLE_CLIENT_ID || '',
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
     }),
     GitHubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID!,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+      clientId: process.env.GITHUB_CLIENT_ID || '',
+      clientSecret: process.env.GITHUB_CLIENT_SECRET || '',
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
@@ -22,7 +22,7 @@ const handler = NextAuth({
     signOut: '/auth/signout',
     error: '/auth/error',
   },
-  debug: process.env.NODE_ENV === 'development',
+  debug: true, // Enable debug for troubleshooting
   callbacks: {
     async jwt({ token, user, account }) {
       if (account && user) {
@@ -31,7 +31,6 @@ const handler = NextAuth({
       return token;
     },
     async session({ session, token }) {
-      // Add accessToken to session if needed
       return session;
     },
   },
