@@ -22,7 +22,7 @@ const handler = NextAuth({
     signOut: '/auth/signout',
     error: '/auth/error',
   },
-  debug: true, // Enable debug for troubleshooting
+  debug: false, // Disable debug for production
   callbacks: {
     async jwt({ token, user, account }) {
       if (account && user) {
